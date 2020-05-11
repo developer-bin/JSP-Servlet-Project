@@ -14,5 +14,10 @@
   - Oracle Database
   - Apache Tomcat
 ## 포함된 문서
+
   - SRS(Software Requirements Standards)
   - SDS(Software Design Standards)
+## 맡은 역할
+
+총 4명이 프로젝트에 참여하였고 저의 역할은 백엔드 개발 입니다.
+백엔드 : Apache Tomcat을 사용하여 웹서버 및 WAS를 구성하였고, JSP/Servlet MVC model 2로 웹 구조를 설계하고 View, Model, Controller 각각의 모듈에 대해 개발을 하였고, Oracle DB를 사용하여 쿼리로 데이터를 관리하였습니다.
