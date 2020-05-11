@@ -1,0 +1,37 @@
+<div class="pages">
+   <div data-page="restaurant-search" class="page">
+
+      <div class="page-content text-center margin-top-30">
+         <div class="text-center back-close-icon"><a href="#" class="back link"><i class="flaticon-close"></i></a></div>
+         <div class="content-block">
+            <div class="text-center margin-bottom-15 icon-recover"><i class="flaticon-cover"></i></div>
+            <div class="text-medium margin-bottom-15">식당검색</div>
+            <div class="gray-text text-thiny">
+               식당의 정보를 입력해 주세요
+            </div>
+            <form action="search_view_restaurant.jsp" id="searchRestaurant"  method="post" name="searchRestaurant">
+               <div class="list-block margin-bottom-15">
+                 <ul class="no-border">      
+                  <li>
+                    <div class="item-content">
+                     <div class="input-icon item-media"><i class="flaticon-search"></i></div>
+                     <div class="item-inner no-margin">
+                       <div class="item-input">
+                        <input type="text" class="text-thiny" placeholder="Search by Name..." name="restaurantName">
+                       </div>
+                     </div>
+                     
+                    </div>
+                  </li>
+                 </ul>
+               </div>
+               <div class="row margin-bottom-10">
+                  <div class="col-100">
+                     <a href="#" onclick="document.getElementById('searchRestaurant').submit();" class="button button-fill color-deeporange text-thiny">Search</a>
+                  </div>
+               </div>
+            </form>
+         </div>
+      </div>
+   </div>
+</div>
