@@ -73,13 +73,12 @@ public class control extends HttpServlet {
 		String conPath = request.getContextPath();
 		String com = uri.substring(conPath.length());
 		
-		
-		if(com.equals("/register_restaurant.do")) {
+		if(com.equals("/register_restaurant.do")) {//식당 등록 요청
 			command = new RegisterRestaurantCommand();
 			command.execute(request, response);
 			viewPage = "index.jsp";
 
-		} else if(com.equals("/menu_write.do")) {
+		} else if(com.equals("/menu_write.do")) {//식당 메뉴 추가 요청
 			command = new MenuWriteCommand();
 			command.execute(request, response);
 			viewPage="mymenu.jsp";
