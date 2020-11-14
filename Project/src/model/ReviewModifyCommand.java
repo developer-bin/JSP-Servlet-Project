@@ -7,6 +7,7 @@ import javax.servlet.http.HttpSession;
 import dao.ReviewDao;
 import dto.ReviewDto;
 
+//식당 리뷰를 수정하기 위한 서비스 로직
 public class ReviewModifyCommand implements Command {
 
 	@Override

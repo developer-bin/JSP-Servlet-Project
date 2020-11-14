@@ -20,7 +20,6 @@
 				<div class="list-block margin-bottom-40">
 				  <ul class="no-border">	
 				  	
-					
 					<li>
 					  <div class="item-content">
 						<div class="input-icon item-media"><i class="flaticon-user"></i></div>
@@ -32,7 +31,6 @@
 						
 					  </div>
 					</li>
-					
 					
 					<li>
 					  <div class="item-content">
@@ -46,7 +44,6 @@
 					  </div>
 					</li>
 					
-					
 					<li>
 					  <div class="item-content">
 						<div class="input-icon item-media"><i class="flaticon-user"></i></div>
@@ -58,21 +55,14 @@
 						
 					  </div>
 					</li>
-					
-
-						
-					
-
 					</ul>
 				</div>
 				<div>
 				<input type="submit" class="button button-fill color-black text-thiny" value="입력">
 				</div>
-				
 			</form>
 		</div>
 	</div>
 </div>
-
 </body> 
 </html>

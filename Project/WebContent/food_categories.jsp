@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
-    
+     
 <div class="pages">
    <div data-page="categories" class="page navbar-fixed">
      <div class="navbar">
@@ -46,7 +45,6 @@
                   
                </a>
             </div>
-            
             
             <div class="col-50">
                <a href="food_categories_view.jsp?categories=bunsik" class="food-category">

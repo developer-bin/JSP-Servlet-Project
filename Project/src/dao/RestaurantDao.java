@@ -15,18 +15,7 @@ public class RestaurantDao {
 
 	DataSource dataSource;
 	
-	public RestaurantDao() {
-		// TODO Auto-generated constructor stub
-		
-		try {
-			Context context = new InitialContext();
-			dataSource = (DataSource) context.lookup("java:comp/env/jdbc/Oracle11g");
-		} catch (Exception e) {
-			// TODO: handle exception
-			e.printStackTrace();
-		}
-	}
-	
+	//식당정보(restaurantName, category, businessNumber)를 이용하여 식당 등록
 	public void insertRestaurant(String restaurantName, String category, String businessNumber) {
 		// TODO Auto-generated method stub
 		
@@ -56,6 +45,7 @@ public class RestaurantDao {
 		
 	}
 	
+	//식당 전체 리스트를 가져옴
 	public ArrayList<RestaurantDto> lists() {
 		
 		ArrayList<RestaurantDto> dtos = new ArrayList<RestaurantDto>();
@@ -96,7 +86,7 @@ public class RestaurantDao {
 		return dtos;
 	}
 	
-	
+	//식당고유번호(businessNumber)에 해당하는 식당 정보를 가져옴
 	public RestaurantDto getBusinessNumMember(String businessNumber) {
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
@@ -133,6 +123,17 @@ public class RestaurantDao {
 		
 	}
 	
-	
+	//데이터베이스 연결(커넥션)
+	public RestaurantDao() {
+		// TODO Auto-generated constructor stub
+		
+		try {
+			Context context = new InitialContext();
+			dataSource = (DataSource) context.lookup("java:comp/env/jdbc/Oracle11g");
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+	}	
 	
 }

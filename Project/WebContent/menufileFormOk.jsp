@@ -34,7 +34,7 @@
 <title>Insert title here</title>
 </head>
 <body>
- 	file upload success!
+ 	파일 업로드 완료
 	<a href="index.jsp">메인화면으로</a>
 </body>
 </html>

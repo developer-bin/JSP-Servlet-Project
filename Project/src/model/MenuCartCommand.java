@@ -7,6 +7,7 @@ import javax.servlet.http.HttpSession;
 import dao.CartDao;
 import dto.CartDto;
 
+//사용자의 선택 메뉴를 카트(장바구니)에 등록하기 위한 서비스 로직
 public class MenuCartCommand implements Command {
 
 	@Override

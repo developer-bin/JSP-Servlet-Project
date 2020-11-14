@@ -7,6 +7,7 @@ import javax.servlet.http.HttpSession;
 import dao.MenuDao;
 import dto.MenuDto;
 
+//식당 메뉴를 등록하기 위한 서비스 로직
 public class MenuWriteCommand implements Command {
 
 	@Override

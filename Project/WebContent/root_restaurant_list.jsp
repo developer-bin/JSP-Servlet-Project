@@ -45,15 +45,8 @@
 
 <div class="pages">
     <div data-page="detail-restaurant" class="page navbar-fixed">
-       
-
-        <!--  -->
- 
-            <!-- Tabs, tabs wrapper -->
-      
 						<div class="list-block media-list margin-top-15">
 							<ul>
-							
 							 <%
 											String path = request.getRealPath("menuFolder");	//패스바꾸기
 											File file=new File(path);
@@ -71,17 +64,12 @@
 												<%
 											}
 											
-											
-											
-											
 											for(int i=0;i<dtos.size();i++){
 												String imgPath="img\\photos\\food.jpg";
 												MenuDto dto=dtos.get(i);
 												if(!dto.getbusinessNumber().equals(sessionbusinessNumber))
 													continue;
 							 %>
-							
-							
 								<li>
 									<a href="#" class="item-link item-content">
 									<%
@@ -118,8 +106,6 @@
 								
 							</ul>
 						</div>
-							
-                   
                <div class="text-center margin-bottom-15">
 					<a href="menu_write.jsp" class="button button-fill color-facebook text-thiny">식당 추가</a>
 				</div>
@@ -127,9 +113,6 @@
                <div class="text-center margin-bottom-15">
 					<a href="index.jsp" class="button button-fill color-facebook text-thiny">메인 화면으로</a>
 				</div>
-  
-        <!--  -->
-
     </div>
 </div>
 

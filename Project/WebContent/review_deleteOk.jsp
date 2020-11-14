@@ -34,13 +34,8 @@ String businessNumber=request.getParameter("businessNum");
 							<input type="hidden" value="<%=businessNumber %>" name="businessNumber">
 						  </div>
 					</li>
-				  	
-
-				
 					</ul>
 				</div>
-
-
 				<div class="row">
 					<div class="col-50">
 						<input type="submit" class="button button-fill color-black text-thiny" value="삭제확인">
@@ -49,16 +44,6 @@ String businessNumber=request.getParameter("businessNum");
 						<a href="restaurant-single.jsp?businessnumber=<%=businessNumber %>" class="button button-fill color-black text-thiny">삭제취소</a>
 					</div>
 				</div>
-
-			
-<!-- 				<div>
-				<input type="submit" class="button button-fill color-black text-thiny" value="삭제확인">
-				
-				</div>
-				<div>
-				<input type="button" class="button button-fill color-black text-thiny" value="삭제취소">
-				</div> -->
-
 			</form>
 		</div>
 	</div>

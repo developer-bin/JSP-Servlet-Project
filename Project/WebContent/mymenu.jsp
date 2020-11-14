@@ -5,11 +5,7 @@
 <%@ page import="java.io.File" %>
 <%@ page import="java.util.ArrayList"%>
 <%request.setCharacterEncoding("UTF-8");%>    
-
-
-
  <%
-   
 	String name = (String)session.getAttribute("name");
 	String id = (String)session.getAttribute("id");
 	String businessNumber = (String)session.getAttribute("businessNumber");
@@ -17,9 +13,6 @@
 	if(id==null)
 		id="-1";
 %>
-
-
-
 <!DOCTYPE html>
 <html>
 
@@ -62,8 +55,6 @@
   <div id="left-menu" class="panel panel-left panel-reveal">
       <div class="content-block">
          <div class="left-menu-profile text-center">
-         
-      
          </div>
         </div>
       <!-- Menu items -->
@@ -82,13 +73,10 @@
                </div>
             </li>
          
-         
 <%      //루트계정일때는
       if(id.equals("root")){
          
 %>
-         
-         
             <li>
                <div class="item-content">
                   <div class="item-media">
@@ -114,19 +102,12 @@
                   </div>
                </div>
             </li>
-            
-        
 <%
       }
 %>
-         
-         
 <%
-      if(MemberDao.MEMBER_OWNER_IS_SUCCESS==Mdao.businessNumberCheck(id)){      //점주만
-         
-         
+      if(MemberDao.MEMBER_OWNER_IS_SUCCESS==Mdao.businessNumberCheck(id)){      //점주만   
 %>
- 
          <li>
                <div class="item-content">
                   <div class="item-media">
@@ -139,9 +120,6 @@
                   </div>
                </div>
             </li>
- 
- 
- 
  
             <li>
                <div class="item-content">
@@ -182,7 +160,6 @@
                </div>
             </li>
             
-            
             <li>
                <div class="item-content">
                   <div class="item-media">
@@ -212,7 +189,6 @@
       }
          
 %>
-            
             <li>
                <div class="item-content">
                   <div class="item-media">
@@ -225,7 +201,6 @@
                   </div>
                </div>
             </li>
-            
             
             <li>
                <div class="item-content">
@@ -252,8 +227,6 @@
                   </div>
                </div>
             </li>
-            
-         
             
             <%if(MemberDao.MEMBER_USER_IS_SUCCESS==Mdao.businessNumberCheck(id)){    %>
             
@@ -294,17 +267,7 @@
                      </div>
                   </div>
                </div>
-            </li>
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
+            </li> 
          </ul>
       </div>
       <!-- Menu items -->
@@ -329,9 +292,6 @@
                 </div>
             </div>
         </div>
-
-        <!--  -->
-
  <div class="tabs-animated-wrap">
   <div class="tabs">
   <div id="tab-1" class="page-content tab active">
@@ -356,8 +316,6 @@
 												if(!dto.getbusinessNumber().equals(businessNumber))
 													continue;
 							 %>
-							
-							
 								<li>
 									<a href="#" class="item-link item-content">
 									<%
@@ -384,47 +342,30 @@
 										</div>
 									</a>
 								</li>
-								
-								
 								<li>
 										<div class="text-center margin-bottom-15">
 									<a href="menu_delete.do?businessNumber=<%=businessNumber %>&menuNumber=<%=dto.getMenuNumber() %>" class="button button-fill color-facebook text-thiny">메뉴 삭제</a>
 								</div>
 										</li>
-								
-								
 								<%
 								}
 								%>
-								
-								
-								
-								
 							</ul>
 						</div>
-							
-                   
-              
-  
-        <!--  -->
-
-    
      <div class="text-center margin-bottom-15">
 					<a href="menu_write.jsp" class="button button-fill color-facebook text-thiny">메뉴 추가</a>
 				</div>
-               
                <div class="text-center margin-bottom-15">
 					<a href="index.jsp" class="button button-fill color-facebook text-thiny">메인 화면으로</a>
 				</div>
-				</div>
-				</div>
-				</div>
-				
-				</div>
-				</div>
+			</div>
+			</div>
+			</div>
+		</div>
+	</div>
     </div>
     </div>
-    </div>
+   </div>
 </div>
 </div>
 

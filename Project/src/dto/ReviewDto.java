@@ -1,5 +1,6 @@
 package dto;
 
+//리뷰에 대한 정보를 표현
 public class ReviewDto {
 	private String businessNumber;
 	private String userId;

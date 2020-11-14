@@ -7,6 +7,7 @@ import javax.servlet.http.HttpSession;
 import dao.ReservationDao;
 import dto.ReservationDto;
 
+//식당 예약을 위한 서비스 로직
 public class ReservationCommand implements Command {
 
 	@Override

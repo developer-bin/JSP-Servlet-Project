@@ -6,10 +6,7 @@
  <%@ page import="java.util.ArrayList"%> 
  <%request.setCharacterEncoding("UTF-8");%>
  <script language="javascript">
- 
- </script>
- 
- 
+ </script> 
 <div class="pages">
     <div data-page="restaurants" class="page navbar-fixed toolbar-fixed">
         <div class="navbar">
@@ -40,7 +37,6 @@
                 <div id="tab-1" class="page-content tab active">
                     <div class="content-block">
                         <div id="list-restaurants">
-                        
                         
                         <%
 					                        String path = request.getRealPath("restaurantFolder");	//패스바꾸기
@@ -97,22 +93,15 @@
                                         <a href="restaurant-single.jsp?businessNumber=<%=dto.getBusinessNumber()%>" class="button button-fill color-deeporange text-extrat-thiny">식당 선택</a>
                                     </div>
                                 </div>
-                            </div>												
-												
-												
-												
+                            </div>																							
 <%
 												 
 											}
 %>
-                                       
-
                         </div>
                     </div>
                 </div>
 				<!-- TAB LIST -->
-				
-				
 				<!-- TAB GRID -->
 				<div id="tab-2" class="page-content tab">
 					<div class="content-block">
@@ -144,13 +133,9 @@
 									<a href="restaurant-single.jsp?businessNumber=<%=dto.getBusinessNumber()%>" class="button button-fill color-deeporange text-extrat-thiny">식당 선택</a>
 								</div>
 							</div>
-							
 							<%
 							} 
 							%>
-							
-							
-							
 						</div>
 					</div>
 				</div>

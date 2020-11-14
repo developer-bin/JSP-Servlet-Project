@@ -7,6 +7,7 @@ import javax.servlet.http.HttpSession;
 import dao.MenuDao;
 import dto.MenuDto;
 
+//식당의 메뉴를 삭제하기 위한 서비스 로직
 public class MenuDeleteCommand implements Command {
 
 	@Override

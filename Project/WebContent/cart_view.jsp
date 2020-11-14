@@ -4,14 +4,8 @@
     pageEncoding="UTF-8"%>
 <%@ page import="java.io.File" %>
 <%@ page import="java.util.ArrayList"%>
-<%request.setCharacterEncoding("UTF-8");%>  
-
-
-
-
-  
+<%request.setCharacterEncoding("UTF-8");%>    
  <%
-   
 	String name = (String)session.getAttribute("name");
 	String id = (String)session.getAttribute("id");
 	String businessNumber = (String)session.getAttribute("businessNumber");
@@ -20,9 +14,6 @@
 	if(id==null)
 		id="-1";
 %>
-
-
-
 <!DOCTYPE html>
 <html>
 
@@ -106,10 +97,7 @@
          
 <%      //루트계정일때는
       if(id.equals("root")){
-         
 %>
-         
-         
             <li>
                <div class="item-content">
                   <div class="item-media">
@@ -142,8 +130,6 @@
          
 <%
       if(MemberDao.MEMBER_OWNER_IS_SUCCESS==dao.businessNumberCheck(id)){      //점주만
-         
-         
 %>
  
          <li>
@@ -158,10 +144,7 @@
                   </div>
                </div>
             </li>
- 
- 
- 
- 
+            
             <li>
                <div class="item-content">
                   <div class="item-media">
@@ -201,7 +184,6 @@
                </div>
             </li>
             
-            
             <li>
                <div class="item-content">
                   <div class="item-media">
@@ -231,7 +213,6 @@
       }
          
 %>
-            
             <li>
                <div class="item-content">
                   <div class="item-media">
@@ -244,7 +225,6 @@
                   </div>
                </div>
             </li>
-            
             
             <li>
                <div class="item-content">
@@ -271,8 +251,6 @@
                   </div>
                </div>
             </li>
-            
-         
             
             <%if(MemberDao.MEMBER_USER_IS_SUCCESS==dao.businessNumberCheck(id)){    %>
             
@@ -302,7 +280,6 @@
                </div>
             </li>
             
-            
             <%} %>
             <li>
                <div class="item-content">
@@ -315,17 +292,7 @@
                      </div>
                   </div>
                </div>
-            </li>
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
+            </li> 
          </ul>
       </div>
 		<!-- Menu items -->
@@ -350,9 +317,7 @@
                 </div>
             </div>
         </div>
-
-        <!--  -->
-
+        
  <div class="tabs-animated-wrap">
   <div class="tabs">
   <div id="tab-1" class="page-content tab active">
@@ -361,18 +326,13 @@
       <div id="list-restaurants">
 						<div class="list-block media-list margin-top-15">
 							<ul>						
-							
 							<%
-							
 							CartDao cartDao=CartDao.getInstance();
 							ArrayList<CartDto> cartDtos=cartDao.list(id);
-							
 							
 							String path = request.getRealPath("menuFolder");	//패스바꾸기
 							File file=new File(path);
 							String[] fileList= file.list();	
-							
-							
 							
 							for(int i=0;i<cartDtos.size();i++){
 								CartDto cartDto=cartDtos.get(i);
@@ -408,13 +368,6 @@
 								
 							</ul>
 						</div>
-							
-                   
-              
-  
-        <!--  -->
-
-    
                
                <div class="text-center margin-bottom-15">
 					<a href="index.jsp" class="button button-fill color-facebook text-thiny">메인 화면으로</a>

@@ -35,16 +35,12 @@
                 <div id="tab-1" class="page-content tab active">
                     <div class="content-block">
                         <div id="list-restaurants">
-                        
-                        
                         <%
 											String path = request.getRealPath("restaurantFolder");	//패스바꾸기
 											File file=new File(path);
 											String[] fileList= file.list();
 											RestaurantDao dao=new RestaurantDao();
 											ArrayList<RestaurantDto> dtos=dao.lists();
-											
-											
 											
 											for(int i=0; i<dtos.size();i++){	
 												String imgPath="img\\photos\\food.jpg";
@@ -56,8 +52,6 @@
 													if(resName.equals(dto.getRestaurantName()))
 														imgPath=path+"\\"+fileList[j];
 												}
-												
-												
 						 %>						
                             <div class="restaurant">
                                 <div class="row">
@@ -77,28 +71,17 @@
                                         <a href="restaurant-single.jsp?businessNumber=<%=dto.getBusinessNumber()%>" class="button button-fill color-deeporange text-extrat-thiny">식당 선택</a>
                                     </div>
                                 </div>
-                            </div>												
-												
-												
-												
+                            </div>																															
 <%
 											}
 %>
-                                       
-
                         </div>
                     </div>
                 </div>
-				<!-- TAB LIST -->
-				
-				
-				<!-- TAB GRID -->
 				<div id="tab-2" class="page-content tab">
 					<div class="content-block">
 						<div class="row">
-						
 						<%
-											
 						for(int i=0; i<dtos.size();i++){	
 							String imgPath="img\\photos\\food.jpg";
 							RestaurantDto dto=dtos.get(i);
@@ -123,17 +106,10 @@
 							<%
 							} 
 							%>
-							
-							
-							
 						</div>
 					</div>
 				</div>
-				<!-- TAB GRID -->
-				
             </div>
         </div>
-        <!-- TAB -->
-
     </div>
 </div>

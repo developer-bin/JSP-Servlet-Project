@@ -1,10 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
  <%request.setCharacterEncoding("UTF-8");%>
-
-
+ 
 <%
-
 String businessNumber=request.getParameter("businessNum"); 
 String userId=(String)session.getAttribute("id");
 if(userId == null){
@@ -17,7 +16,6 @@ if(userId == null){
 	<%
 }
 %>
-    
 <div class="pages">
 	<div data-page="login" class="page">
 		<div class="navbar navbar-no-color">
@@ -42,12 +40,6 @@ if(userId == null){
 							<input type="hidden" value="<%=businessNumber %>" name="businessNumber">
 						  </div>
 					</li>
-				  	
-				  	
-				  	
-				  	
-				  	
-				  	
 					
 					<li>
 					  <div class="item-content">
@@ -72,17 +64,12 @@ if(userId == null){
 						
 					  </div>
 					</li>
-
-				
 					</ul>
 				</div>
-
-
+			
 				<div>
 				<input type="submit" class="button button-fill color-black text-thiny" value="입력">
 				</div>
-
-				
 
 			</form>
 		</div>

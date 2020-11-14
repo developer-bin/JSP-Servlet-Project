@@ -24,7 +24,7 @@ public class GoogleMapDao {
 	}
 	
 
-	
+	//businessNumber(가게번호) 에 해당하는 구글 맵에 대한 정보(api key 값)을 가져옴
 	public GoogleMapDto getBusinessNumGoogle(String businessNumber) {
 		Connection connection = null;
 		PreparedStatement pstmt = null;
@@ -61,7 +61,7 @@ public class GoogleMapDao {
 	}
 	
 	
-
+	//식당의 지도에 대한 정보를 데이터베이스에 등록함
 	public int insertMap(GoogleMapDto dto) {
 		int ri = 0;
 		
@@ -96,7 +96,7 @@ public class GoogleMapDao {
 	
 	
 	
-	
+	//데이터베이스 연결(커넥션)
 	private Connection getConnection() {
 		
 		Context context = null;

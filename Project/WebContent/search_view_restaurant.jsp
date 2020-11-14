@@ -5,13 +5,8 @@
  <%@ page import="java.io.File" %>
  <%@ page import="java.util.ArrayList"%>
  <%request.setCharacterEncoding("UTF-8");%>
- 
- 
 
- 
- <%
- 
-   
+ <%  
 String restaurantName=request.getParameter("restaurantName");
 	String name = (String)session.getAttribute("name");
 	String id = (String)session.getAttribute("id");
@@ -25,7 +20,7 @@ String restaurantName=request.getParameter("restaurantName");
 <html> 
  
 <head>
-    <!-- Required meta tags-->
+    <!-- 메타 태그 -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -37,10 +32,10 @@ String restaurantName=request.getParameter("restaurantName");
 	<link rel="shortcut icon" sizes="128x128" href="img/photos/128x128.png">
     <!-- Color theme for statusbar -->
     <meta name="theme-color" content="#000000">
-    <!-- Your app title -->
+    <!-- 타이틀 -->
     <title>예약의민족</title>
 	
-	<!-- FONTS -->
+	<!-- 폰트 -->
 	<link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet"> 
 	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700' rel='stylesheet' type='text/css'>
@@ -59,13 +54,12 @@ String restaurantName=request.getParameter("restaurantName");
 
 <body class="theme-black"> 
  <div class="statusbar-overlay"></div>
- <!-- Panels overlay-->
+ <!-- 패널 오버레이 -->
  <div class="panel-overlay"></div>
  <div id="left-menu" class="panel panel-left panel-reveal">
       <div class="content-block">
          <div class="left-menu-profile text-center">
          
-      
          </div>
         </div>
       <!-- Menu items -->
@@ -83,14 +77,10 @@ String restaurantName=request.getParameter("restaurantName");
                   </div>
                </div>
             </li>
-         
-         
 <%      //루트계정일때는
       if(id.equals("root")){
          
 %>
-         
-         
             <li>
                <div class="item-content">
                   <div class="item-media">
@@ -116,19 +106,12 @@ String restaurantName=request.getParameter("restaurantName");
                   </div>
                </div>
             </li>
-            
-         
 <%
       }
-%>
-         
-         
+%>  
 <%
-      if(MemberDao.MEMBER_OWNER_IS_SUCCESS==Mdao.businessNumberCheck(id)){      //점주만
-         
-         
+      if(MemberDao.MEMBER_OWNER_IS_SUCCESS==Mdao.businessNumberCheck(id)){      //점주만    
 %>
- 
          <li>
                <div class="item-content">
                   <div class="item-media">
@@ -141,9 +124,6 @@ String restaurantName=request.getParameter("restaurantName");
                   </div>
                </div>
             </li>
- 
- 
- 
  
             <li>
                <div class="item-content">
@@ -184,7 +164,6 @@ String restaurantName=request.getParameter("restaurantName");
                </div>
             </li>
             
-            
             <li>
                <div class="item-content">
                   <div class="item-media">
@@ -214,7 +193,6 @@ String restaurantName=request.getParameter("restaurantName");
       }
          
 %>
-            
             <li>
                <div class="item-content">
                   <div class="item-media">
@@ -227,7 +205,6 @@ String restaurantName=request.getParameter("restaurantName");
                   </div>
                </div>
             </li>
-            
             
             <li>
                <div class="item-content">
@@ -254,8 +231,6 @@ String restaurantName=request.getParameter("restaurantName");
                   </div>
                </div>
             </li>
-            
-         
             
             <%if(MemberDao.MEMBER_USER_IS_SUCCESS==Mdao.businessNumberCheck(id)){    %>
             
@@ -297,19 +272,8 @@ String restaurantName=request.getParameter("restaurantName");
                   </div>
                </div>
             </li>
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
          </ul>
       </div>
-      <!-- Menu items -->
     </div>
  <div class="views">
  <div class="view view-main">
@@ -337,8 +301,6 @@ String restaurantName=request.getParameter("restaurantName");
                 <a href="#tab-2" class="tab-link">Grid</a>
             </div>
         </div>
-
-        <!-- Toolbar has additional "toolbar-bottom" class -->
         <div class="tabs-animated-wrap">
             <div class="tabs">
 			
@@ -347,15 +309,12 @@ String restaurantName=request.getParameter("restaurantName");
                     <div class="content-block">
                         <div id="list-restaurants">
                         
-                        
                         <%
 											String path = request.getRealPath("restaurantFolder");	//패스바꾸기
 											File file=new File(path);
 											String[] fileList= file.list();
 											RestaurantDao dao=new RestaurantDao();
 											ArrayList<RestaurantDto> dtos=dao.lists();
-											
-											
 											
 											for(int i=0; i<dtos.size();i++){	
 												String imgPath="img\\photos\\food.jpg";
@@ -377,7 +336,6 @@ String restaurantName=request.getParameter("restaurantName");
                                     <div class="col-100">
                                         <div class="restaurant-img">
 												<img src="<%=imgPath%>" alt="restaurant" width="300" height="100">
-									
                                         </div>
                                     </div>
                                 </div>
@@ -390,31 +348,20 @@ String restaurantName=request.getParameter("restaurantName");
                                         <a href="restaurant-single.jsp?businessNumber=<%=dto.getBusinessNumber()%>" class="button button-fill color-deeporange text-extrat-thiny">식당 선택</a>
                                     </div>
                                 </div>
-                            </div>												
-												
-												
-												
+                            </div>															
 <%
 											}
 %>
-                                       
-
                         </div>
                     </div>
                     				<div class="text-center margin-bottom-15">
 					<a href="index.jsp" class="button button-fill color-facebook text-thiny">메인 화면으로</a>
 		</div>
                 </div>
-				<!-- TAB LIST -->
-				
-				
-				<!-- TAB GRID -->
 				<div id="tab-2" class="page-content tab">
 					<div class="content-block">
 						<div class="row">
-						
-						<%
-											
+						<%				
 						for(int i=0; i<dtos.size();i++){	
 							String imgPath="img\\photos\\food.jpg";
 							RestaurantDto dto=dtos.get(i);
@@ -441,27 +388,18 @@ String restaurantName=request.getParameter("restaurantName");
 							<%
 							} 
 							%>
-							
-							
-							
 						</div>
 					</div>
 					<div class="text-center margin-bottom-15">
 					<a href="index.jsp" class="button button-fill color-facebook text-thiny">메인 화면으로</a>
 				</div>
-				<!-- TAB GRID -->
             </div>
-            
-        </div>
-        <!-- TAB -->
-         
-         
+        </div> 
 </div>
     </div>
-
     </div>
-
 </div>
+
 <!-- Jquery-->
 	<script type="text/javascript" src="js/jquery-1.12.3.min.js"></script>
 	<!-- Slick Carousel -->

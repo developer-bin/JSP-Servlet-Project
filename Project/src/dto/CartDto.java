@@ -1,5 +1,6 @@
 package dto;
 
+//사용자가 고른 메뉴에 대한 정보(장바구니, 카트)를 나타냄 
 public class CartDto {
 	public String getRestaurantName() {
 		return restaurantName;

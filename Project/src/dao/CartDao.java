@@ -14,7 +14,7 @@ import javax.sql.DataSource;
 
 import dto.CartDto;
 
-
+//사용자가 선택한 메뉴들에 대한 DAO
 public class CartDao {
 	public static final int MENU_JOIN_SUCCESS = 1;
 	
@@ -32,7 +32,7 @@ public class CartDao {
 	
 	
 	
-	
+	//메뉴를 카트(장바구니)에 넣음
 	public int insertCart(CartDto dto) {
 		int ri = 0;
 		
@@ -66,8 +66,8 @@ public class CartDao {
 		return ri;
 	}
 	
-	
-public ArrayList<CartDto> lists() {
+	//선택한 메뉴들 전체 리스트로 받아옴
+	public ArrayList<CartDto> lists() {
 		
 		ArrayList<CartDto> dtos = new ArrayList<CartDto>();
 		Connection connection = null;
@@ -110,7 +110,7 @@ public ArrayList<CartDto> lists() {
 	}
 	
 	
-	
+	//userId에 해당하는 카트의 항목만을 가져옴
 	public ArrayList<CartDto> list(String userId) {
 		
 		ArrayList<CartDto> dtos = new ArrayList<CartDto>();
@@ -152,7 +152,8 @@ public ArrayList<CartDto> lists() {
 		}
 		return dtos;
 	}	
-
+	
+	//데이터베이스 커넥션
 	private Connection getConnection() {
 		
 		Context context = null;

@@ -22,16 +22,11 @@ String businessNumber = request.getParameter("businessNum");
 			<form action="reservation.do" method="post">
 				<div class="list-block margin-bottom-40 booking-form">
 				  <ul class="no-border">
-					
-					
 					<li>
 						  <div class="item-input">
 							<input type="hidden" value="<%=businessNumber %>" name="businessNumber">
 						  </div>
 					</li>
-					
-					
-					
 					<li>
 					  <div class="item-content">
 						<div class="input-icon item-media"><i class="flaticon-email"></i></div>

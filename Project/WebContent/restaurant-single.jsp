@@ -7,9 +7,6 @@
 <%@ page import="java.io.File" %>
 <%@ page import="java.util.ArrayList"%>
 <%request.setCharacterEncoding("UTF-8");%>   
-
-
- 
 <%
    
 		String businessNumber=request.getParameter("businessNumber");
@@ -22,7 +19,6 @@
 		if(id==null)
 			id="-1";
 %>
-
 <!DOCTYPE html>
 <html>
 
@@ -68,8 +64,6 @@
        <div id="left-menu" class="panel panel-left panel-reveal">
       <div class="content-block">
          <div class="left-menu-profile text-center">
-         
-      
          </div>
         </div>
       <!-- Menu items -->
@@ -87,14 +81,10 @@
                   </div>
                </div>
             </li>
-         
-         
 <%      //루트계정일때는
       if(id.equals("root")){
          
 %>
-         
-         
             <li>
                <div class="item-content">
                   <div class="item-media">
@@ -119,20 +109,13 @@
                      </div>
                   </div>
                </div>
-            </li>
-            
-         
+            </li>  
 <%
       }
-%>
-         
-         
+%>  
 <%
       if(MemberDao.MEMBER_OWNER_IS_SUCCESS==daos.businessNumberCheck(id)){      //점주만
-         
-         
 %>
- 
          <li>
                <div class="item-content">
                   <div class="item-media">
@@ -145,9 +128,6 @@
                   </div>
                </div>
             </li>
- 
- 
- 
  
             <li>
                <div class="item-content">
@@ -188,7 +168,6 @@
                </div>
             </li>
             
-            
             <li>
                <div class="item-content">
                   <div class="item-media">
@@ -217,8 +196,7 @@
 <%
       }
          
-%>
-            
+%>  
             <li>
                <div class="item-content">
                   <div class="item-media">
@@ -231,7 +209,6 @@
                   </div>
                </div>
             </li>
-            
             
             <li>
                <div class="item-content">
@@ -258,11 +235,7 @@
                   </div>
                </div>
             </li>
-            
-         
-            
             <%if(MemberDao.MEMBER_USER_IS_SUCCESS==daos.businessNumberCheck(id)){    %>
-            
             <li>
                <div class="item-content">
                   <div class="item-media">
@@ -300,26 +273,12 @@
                      </div>
                   </div>
                </div>
-            </li>
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
+            </li> 
          </ul>
       </div>
-      <!-- Menu items -->
     </div>
-    
      <div class="views">
-        <!-- Your main view, should have "view-main" class -->
      <div class="view view-main">
-    
     <div class="pages">
     <div data-page="detail-restaurant" class="page navbar-fixed">
         <div class="navbar">
@@ -346,14 +305,11 @@
                 </div>
             </div>
         </div>
-
-        <!--  -->
         <div class="page-content">
 		
 			<div class="row">
 				<div class="col-100">
 					<div class="restaurant-img">
-					
 					                        <%
 											String path = request.getRealPath("restaurantFolder");	//패스바꾸기
 											File file=new File(path);
@@ -361,15 +317,12 @@
 											RestaurantDao restaurantdao=new RestaurantDao();
 											ArrayList<RestaurantDto> dtos=restaurantdao.lists();
 											
-											
-											
 											for(int i=0; i<dtos.size();i++){	
 												String imgPath="img\\photos\\1.jpg";
 												RestaurantDto restaurantdto=dtos.get(i);
 												if(!restaurantdto.getBusinessNumber().equals(businessNumber))
 													continue;
-												
-												
+
 												for(int j=0;j<fileList.length;j++){
 													int idx=fileList[j].indexOf(".");
 													String resName=fileList[j].substring(0,idx);
@@ -378,7 +331,6 @@
 												}
 												
 						 %>		
-					
 						<img src="<%=imgPath %>" alt="restaurant">
 						<%
 						}
@@ -400,15 +352,12 @@
                     <a href="#tab3" class="tab-link button text-extrat-thiny gray-text">식당리뷰</a>
                 </div>
             </div>
-            <!-- Tabs, tabs wrapper -->
             <div class="">
                 <div class="tabs">
                     <!-- Tab 1, active by default -->
                     <div id="tab1" class="tab active">
-                            
 						<div class="list-block media-list margin-top-15">
 							<ul>
-							
 							<%
 							String path2 = request.getRealPath("menuFolder");	//패스바꾸기
 							File file2=new File(path2);
@@ -435,7 +384,6 @@
 									}
 								}
 							%>
-							
 								<li>
 									<a href="detail_menu.jsp?menunu=<%=Mdto.getMenuNumber() %>&businessNum=<%=businessNumber %>" class="item-link item-content">
 										<div class="item-media"><img src="<%=imgPath %>" width="80"></div>
@@ -448,13 +396,9 @@
 										</div>
 									</a>
 								</li>
-								
-								
 								<%
 								} 
 								%>
-								
-								
 							</ul>
 						</div>
 					<%
@@ -464,7 +408,6 @@
 					if(googleDto!=null){
 						googleData=googleDto.getGoogledata();
 					}
-					
 					%>		
                     </div>
                     <!-- Tab 2 -->
@@ -479,7 +422,6 @@
 							<p Class="text-thiny">
 							<%out.println("등록된 지도가 없습니다."); %>
 							<%} %>
-                            	
 						</div>
                     </div>
                     <!-- Tab 3 -->
@@ -498,8 +440,6 @@
                     }else{
                     	averageStar=averageStar/reviewDto.size();
                     }
-                    
-                    
                     %>
                         <div class="list-block media-list margin-top-15">
 							<div class="content-block-title">
@@ -524,14 +464,11 @@
 								</div>
 							</div>
 							<ul>
-							
 							<%
 							for(int i=0;i<reviewDto.size();i++){
 								ReviewDto ReDto=reviewDto.get(i);
 								int ReStar=Integer.parseInt(ReDto.getStarCount());
 							%>
-							
-							
 								<li>
 									<a href="#" class="item-link item-content">
 										<div class="item-media"><img src="img/photos/user-1.png" width="60"></div>
@@ -565,29 +502,19 @@
 										%>
 									</a>
 								</li>
-								
-								
 								<%
 							}
 								%>
-								
-								
-							
-								
-								
 							</ul>
 							
 							<div class="text-center margin-bottom-15">
 							<a href="review_write_form.jsp?businessNum=<%=businessNumber %>" class="button button-fill color-facebook text-thiny">리뷰 추가</a>
 						</div>
-							
-							
 						</div>
                     </div>
                 </div>
             </div>
         </div>
-        <!--  -->
 </div>
 </div>
     </div>

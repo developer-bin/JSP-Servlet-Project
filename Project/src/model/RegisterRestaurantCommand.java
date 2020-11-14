@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import dao.RestaurantDao;
 
+//식당을 등록하기 위한 서비스 로직
 public class RegisterRestaurantCommand implements Command {
 
 	@Override

@@ -1,5 +1,6 @@
 package dto;
 
+//메뉴에 대한 정보를 표현
 public class MenuDto {
 	private String restaurantName;
 	private String businessNumber;

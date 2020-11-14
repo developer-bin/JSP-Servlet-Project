@@ -11,7 +11,8 @@ import javax.sql.DataSource;
 import dto.MemberDto;
 
 public class MemberDao {
-
+	
+	//현재 로그인 한 사용자의 상태값을 나타냄
 	public static final int MEMBER_NONEXISTENT  = 0;
 	public static final int MEMBER_EXISTENT = 1;
 	public static final int MEMBER_JOIN_FAIL = 0;
@@ -32,7 +33,7 @@ public class MemberDao {
 	}
 	
 	
-	
+	//사용자를 추가함
 	public int insertMember(MemberDto dto) {
 		int ri = 0;
 		
@@ -67,6 +68,7 @@ public class MemberDao {
 		return ri;
 	}
 	
+	//id값이 존재하는지 확인(사용자 존재 유무)
 	public int confirmId(String id) {
 		int ri = 0;
 		
@@ -100,6 +102,7 @@ public class MemberDao {
 		return ri;
 	}
 	
+	//사용자의 상태(로그인 성공, 비밀번호 틀림, 로그인 실패 등)를 체크함
 	public int userCheck( String id, String pw) {
 		int ri = 0;
 		String dbPw;
@@ -140,6 +143,7 @@ public class MemberDao {
 		return ri;
 	}
 	
+	//식당 고유번호(businessNumber)로 지금 로그인 한 사용자가 식당 주인계정인지 일반 회원 계정인지 파악
 	public int businessNumberCheck(String id) {
 		int ri= 0;
 		String dbbN;
@@ -181,7 +185,7 @@ public class MemberDao {
 		
 	}
 	
-	
+	//id에 대한 사용자의 정보를 가져옴
 	public MemberDto getMember(String id) {
 		Connection connection = null;
 		PreparedStatement pstmt = null;
@@ -222,6 +226,7 @@ public class MemberDao {
 		
 	}
 	
+	//식당고유번호(num)에 해당하는 사용자의 정보를 가져옴
 	public MemberDto getBusinessNumMember(String num) {
 		Connection connection = null;
 		PreparedStatement pstmt = null;
@@ -262,7 +267,7 @@ public class MemberDao {
 		
 	}
 	
-	
+	//사용자의 정보(이메일, 주소, ...등) 을 변경
 	public int updateMember(MemberDto dto) {
 		int ri = 0;
 		
@@ -296,7 +301,7 @@ public class MemberDao {
 	
 	
 	
-	
+	//데이터베이스 연결(커넥션)
 	private Connection getConnection() {
 		
 		Context context = null;

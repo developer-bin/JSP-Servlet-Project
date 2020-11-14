@@ -2,6 +2,7 @@ package dto;
 
 import java.sql.Timestamp;
 
+//사용자에 대한 정보를 표현
 public class MemberDto {
 
 	private String id;
@@ -15,16 +16,6 @@ public class MemberDto {
 	
 	
 	public MemberDto() {}
-//	public OwnerDto(String id, String pw, String name, String eMail, Timestamp rDate, String address,String restaurantName, String businessNumber) {
-//		this.id = id;
-//		this.pw = pw;
-//		this.name = name;
-//		this.eMail = eMail;
-//		this.rDate = rDate;
-//		this.address = address;
-//		this.restaurantName = restaurantName;
-//		this.businessNumber = businessNumber;
-//	}
 
 	public String getId() {
 		return id;

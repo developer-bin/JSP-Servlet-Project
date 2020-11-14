@@ -7,6 +7,7 @@ import javax.servlet.http.HttpSession;
 import dao.GoogleMapDao;
 import dto.GoogleMapDto;
 
+//구글 맵 요청에 대한 서비스 로직
 public class MapCommand implements Command {
 
 	@Override

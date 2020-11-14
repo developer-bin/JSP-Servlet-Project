@@ -26,7 +26,7 @@ public class ReservationDao {
 	
 	
 
-
+	//식당이름, 예약자이름, 예약자 이메일,,.. 등의 정보(dto) 를 이용하여 식당 예약
 	public int insertReservation(ReservationDto dto) {
 		int ri = 0;
 		
@@ -62,7 +62,7 @@ public class ReservationDao {
 		return ri;
 	}
 	
-	
+	//식당고유번호(businessNumber)에 해당하는 예약리스트를 가져옴
 	public ArrayList<ReservationDto> list(String businessNumber) {
 		
 		ArrayList<ReservationDto> dtos = new ArrayList<ReservationDto>();
@@ -107,8 +107,8 @@ public class ReservationDao {
 		return dtos;
 	}
 	
-	
-public ArrayList<ReservationDto> lists() {
+	//예약 리스트 전체 항목을 가져옴
+	public ArrayList<ReservationDto> lists() {
 		
 		ArrayList<ReservationDto> dtos = new ArrayList<ReservationDto>();
 		Connection connection = null;
@@ -151,25 +151,7 @@ public ArrayList<ReservationDto> lists() {
 		return dtos;
 	}	
 	
-	
-	
-	
-	private Connection getConnection() {
-		
-		Context context = null;
-		DataSource dataSource = null;
-		Connection connection = null;
-		try {
-			context = new InitialContext();
-			dataSource = (DataSource)context.lookup("java:comp/env/jdbc/Oracle11g");
-			connection = dataSource.getConnection();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		
-		return connection;
-	}
-	
+	//식당고유번호(businessNumber) 과 userId에 해당하는 예약된 정보를 삭제함(예약취소)
 	public int deleteReservation(String businessNumber, String userId) {
 		// TODO Auto-generated method stub
 		Connection connection = null;
@@ -201,5 +183,21 @@ public ArrayList<ReservationDto> lists() {
 		return rn;
 	}
 	
+	//데이터베이스 연결(커넥션)
+	private Connection getConnection() {
+		
+		Context context = null;
+		DataSource dataSource = null;
+		Connection connection = null;
+		try {
+			context = new InitialContext();
+			dataSource = (DataSource)context.lookup("java:comp/env/jdbc/Oracle11g");
+			connection = dataSource.getConnection();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return connection;
+	}
 	
 }

@@ -82,12 +82,12 @@ public class control extends HttpServlet {
 			command = new MenuWriteCommand();
 			command.execute(request, response);
 			viewPage="mymenu.jsp";
-		} else if(com.equals("/map.do")) {
+		} else if(com.equals("/map.do")) {//식당 위치 구글 맵 요청
 			command = new MapCommand();
 			command.execute(request, response);
 			viewPage="index.jsp";
 			
-		} else if(com.equals("/review_write.do")){
+		} else if(com.equals("/review_write.do")){//리뷰 쓰기 요청
 			if(sessionid==null) {
 				viewPage="alert_review.html";
 			}else {
@@ -95,29 +95,29 @@ public class control extends HttpServlet {
 				command.execute(request, response);
 				viewPage="restaurant-single.jsp";
 			}
-		} else if(com.equals("/review_modify.do")) {
+		} else if(com.equals("/review_modify.do")) {//리뷰 수정 요청
 				command = new ReviewModifyCommand();
 				command.execute(request, response);
 				viewPage="restaurant-single.jsp";
 			
-		} else if(com.equals("/review_delete.do")) {
+		} else if(com.equals("/review_delete.do")) {//리뷰 삭제 요청
 			command = new ReviewDeleteCommand();
 			command.execute(request, response);
 			viewPage="restaurant-single.jsp";
-		} else if(com.equals("/menu_cart.do")) {
+		} else if(com.equals("/menu_cart.do")) {//고른 메뉴 항목 요청
 			command = new MenuCartCommand();
 			command.execute(request, response);
 			viewPage="restaurant-single.jsp";
 			
-		} else if(com.equals("/reservation.do")) {
+		} else if(com.equals("/reservation.do")) {//식당 예약 요청
 			command = new ReservationCommand();
 			command.execute(request, response);
 			viewPage="restaurant-single.jsp";
-		}else if(com.equals("/reservation_delete.do")) {
+		}else if(com.equals("/reservation_delete.do")) {//식당 예약 삭제 요청
 			command = new ReservationDeleteCommand();
 			command.execute(request, response);
 			viewPage="reservation_view.jsp";
-		}else if(com.equals("/menu_delete.do")) {
+		}else if(com.equals("/menu_delete.do")) {//식당 메뉴 삭제 요청
 			command = new MenuDeleteCommand();
 			command.execute(request, response);
 			viewPage="mymenu.jsp";

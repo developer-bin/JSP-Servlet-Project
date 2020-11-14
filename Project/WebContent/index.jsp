@@ -10,16 +10,11 @@
   
 <%
 }
- 
    String name = (String)session.getAttribute("name");
    String id = (String)session.getAttribute("id");
    String businessNumber = (String)session.getAttribute("businessNumber");
    MemberDao dao = MemberDao.getInstance();
-   
-
 %>
- 
- 
 <head>
     <!-- Required meta tags-->
     <meta charset="utf-8">
@@ -62,8 +57,6 @@
     <div id="left-menu" class="panel panel-left panel-reveal">
       <div class="content-block">
          <div class="left-menu-profile text-center">
-         
-      
          </div>
         </div>
       <!-- Menu items -->
@@ -81,14 +74,10 @@
                   </div>
                </div>
             </li>
-         
-         
 <%      //루트계정일때는
       if(id.equals("root")){
          
 %>
-         
-         
             <li>
                <div class="item-content">
                   <div class="item-media">
@@ -120,11 +109,8 @@
          
          
 <%
-      if(MemberDao.MEMBER_OWNER_IS_SUCCESS==dao.businessNumberCheck(id)){      //점주만
-         
-         
+      if(MemberDao.MEMBER_OWNER_IS_SUCCESS==dao.businessNumberCheck(id)){      //점주만  
 %>
- 
          <li>
                <div class="item-content">
                   <div class="item-media">
@@ -137,9 +123,6 @@
                   </div>
                </div>
             </li>
- 
- 
- 
  
             <li>
                <div class="item-content">
@@ -180,7 +163,6 @@
                </div>
             </li>
             
-            
             <li>
                <div class="item-content">
                   <div class="item-media">
@@ -210,7 +192,6 @@
       }
          
 %>
-            
             <li>
                <div class="item-content">
                   <div class="item-media">
@@ -223,7 +204,6 @@
                   </div>
                </div>
             </li>
-            
             
             <li>
                <div class="item-content">
@@ -250,8 +230,6 @@
                   </div>
                </div>
             </li>
-            
-         
             
             <%if(MemberDao.MEMBER_USER_IS_SUCCESS==dao.businessNumberCheck(id)){    %>
             
@@ -293,23 +271,11 @@
                      </div>
                   </div>
                </div>
-            </li>
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
+            </li>  
          </ul>
       </div>
       <!-- Menu items -->
     </div>
-   
- 
     <!-- Views -->
     <div class="views">
         <!-- Your main view, should have "view-main" class -->
@@ -318,7 +284,6 @@
             <div class="pages">
                 <!-- Page, "data-page" contains page name -->
                 <div data-page="index" class="page">
- 
                     <!-- Scrollable page content -->
                     <div class="page-content" id="app-cover">
                   <div class="pull-right">
@@ -342,7 +307,6 @@
                            </a>
                         </div>
                      </div>
-                     
                         </div>
                     </div>
  

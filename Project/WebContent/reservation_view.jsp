@@ -5,9 +5,6 @@
 <%@ page import="java.io.File" %>
 <%@ page import="java.util.ArrayList"%>
 <%request.setCharacterEncoding("UTF-8");%>    
-
-
-
  <%
 
 	String name = (String)session.getAttribute("name");
@@ -17,13 +14,9 @@
 	
 	CartDao cartDao=CartDao.getInstance();
 	
-	
 	if(id==null)
 		id="-1";
 %>
-
-
-
 <!DOCTYPE html>
 <html>
 
@@ -66,8 +59,6 @@
   <div id="left-menu" class="panel panel-left panel-reveal">
       <div class="content-block">
          <div class="left-menu-profile text-center">
-         
-      
          </div>
         </div>
       <!-- Menu items -->
@@ -85,14 +76,10 @@
                   </div>
                </div>
             </li>
-         
-         
 <%      //루트계정일때는
       if(id.equals("root")){
          
 %>
-         
-         
             <li>
                <div class="item-content">
                   <div class="item-media">
@@ -118,19 +105,12 @@
                   </div>
                </div>
             </li>
-            
-        
 <%
       }
 %>
-         
-         
 <%
       if(MemberDao.MEMBER_OWNER_IS_SUCCESS==dao.businessNumberCheck(id)){      //점주만
-         
-         
 %>
- 
          <li>
                <div class="item-content">
                   <div class="item-media">
@@ -143,9 +123,6 @@
                   </div>
                </div>
             </li>
- 
- 
- 
  
             <li>
                <div class="item-content">
@@ -186,7 +163,6 @@
                </div>
             </li>
             
-            
             <li>
                <div class="item-content">
                   <div class="item-media">
@@ -216,7 +192,6 @@
       }
          
 %>
-            
             <li>
                <div class="item-content">
                   <div class="item-media">
@@ -229,7 +204,6 @@
                   </div>
                </div>
             </li>
-            
             
             <li>
                <div class="item-content">
@@ -255,12 +229,8 @@
                      </div>
                   </div>
                </div>
-            </li>
-            
-         
-            
+            </li> 
             <%if(MemberDao.MEMBER_USER_IS_SUCCESS==dao.businessNumberCheck(id)){    %>
-            
             <li>
                <div class="item-content">
                   <div class="item-media">
@@ -299,16 +269,6 @@
                   </div>
                </div>
             </li>
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
          </ul>
       </div>
       <!-- Menu items -->
@@ -333,9 +293,6 @@
                 </div>
             </div>
         </div>
-
-        <!--  -->
-
  <div class="tabs-animated-wrap">
   <div class="tabs">
   <div id="tab-1" class="page-content tab active">
@@ -343,19 +300,11 @@
       <div class="content-block">
       <div id="list-restaurants">
 						<%
-							
 							ReservationDao reservationDao=ReservationDao.getInstance();
 							ArrayList<ReservationDto> reservationDtos=reservationDao.list(businessNumber);
-							
-						
-							
 							for(int i=0;i<reservationDtos.size();i++){
 								ReservationDto reservationDto=reservationDtos.get(i);
-								
-								
 							%>						
-						
-						
 						<div class="list-block media-list margin-top-15">
 							<ul>						
 							
@@ -430,7 +379,6 @@
 										
 									  </div>
 								</li>
-								
 								<%
 								ArrayList<CartDto> cartDtos=cartDao.lists();
 								for(int j=0;j<cartDtos.size();j++){
@@ -439,7 +387,6 @@
 									if(!cartDto.getBusinessNumber().equals(businessNumber))
 										continue;
 								%>
-								
 								<li>
 									<div class="item-content">
 										<div class="input-icon item-media"><i class="flaticon-user"></i></div>
@@ -460,27 +407,19 @@
 								</li>
 
 							</ul>
-						</div>
-							
+						</div>	
                <%
 							}		
 				
 				%>
-  
-        <!--  -->
-
-    
-
-               
                <div class="text-center margin-bottom-15">
 					<a href="index.jsp" class="button button-fill color-facebook text-thiny">메인 화면으로</a>
 				</div>
 				</div>
-				</div>
-				</div>
-				
-				</div>
-				</div>
+			</div>
+			</div>
+		</div>
+		</div>
     </div>
     </div>
     </div>

@@ -30,7 +30,7 @@ public class MenuDao {
 	
 	
 	
-	
+	//식당 메뉴 등록
 	public int insertMenu(MenuDto dto) {
 		int ri = 0;
 		
@@ -67,7 +67,7 @@ public class MenuDao {
 	
 	
 	
-	
+	//식당 메뉴 전체 리스트 가져옴
 	public ArrayList<MenuDto> lists() {
 		
 		ArrayList<MenuDto> dtos = new ArrayList<MenuDto>();
@@ -116,7 +116,7 @@ public class MenuDao {
 	
 	
 	
-	
+	//식당고유번호(businessNumber) 과 메뉴 고유 번호(menuNumber)에 해당하는 메뉴에 대한 정보 가져옴
 	public MenuDto MenuCheck( String businessNumber, String menuNumber) {
 		int ri = 0;
 		MenuDto dto=new MenuDto();
@@ -164,8 +164,8 @@ public class MenuDao {
 	
 	
 	
-	
-public int MenuCnt(String businessNumber) {
+	//식당고유번호(businessNumber)에 해당하는 메뉴의 개수 가져옴
+	public int MenuCnt(String businessNumber) {
 		
 		MenuDto dto = new MenuDto();
 		Connection connection = null;
@@ -202,7 +202,7 @@ public int MenuCnt(String businessNumber) {
 	
 	
 	
-	
+	//식당고유번호(businessNumber)와 메뉴고유번호(menuNumber)에 해당하는 메뉴를 삭제함
 	public int deleteMenu(String businessNumber, String menuNumber) {
 		// TODO Auto-generated method stub
 		Connection connection = null;
@@ -234,22 +234,7 @@ public int MenuCnt(String businessNumber) {
 		return rn;
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
+	//데이터베이스 연결(커넥션)
 	private Connection getConnection() {
 		
 		Context context = null;

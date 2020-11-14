@@ -1,5 +1,6 @@
 package dto;
 
+//식당 예약을 하기 위해 필요한 정보를 표현
 public class ReservationDto {
 	
 	private String businessNumber;

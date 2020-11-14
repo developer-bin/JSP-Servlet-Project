@@ -26,7 +26,7 @@ public class ReviewDao {
 		return instance;
 	}
 	
-	
+	//식당고유번호(businessNumber)와 사용자 아이디 정보(userId)를 이용하여 리뷰정보 가져옴
 	public ReviewDto getBusinessNumReview(String businessNumber,String userId) {
 		
 		Connection connection = null;
@@ -67,14 +67,9 @@ public class ReviewDao {
 			}
 		}
 		return dto;
-	}
-	
-	
-	
-	
-	
-	
+	}	
 
+	//리뷰정보(dto)를 이용하여 리뷰를 등록함
 	public int insertReview(ReviewDto dto) {
 		int ri = 0;
 		
@@ -107,7 +102,7 @@ public class ReviewDao {
 		return ri;
 	}
 	
-	
+	//식당고유번호(businessNumber)에 해당하는 리뷰전체를 가져옴
 	public ArrayList<ReviewDto> list(String businessNumber) {
 		
 		ArrayList<ReviewDto> dtos = new ArrayList<ReviewDto>();
@@ -150,30 +145,7 @@ public class ReviewDao {
 		return dtos;
 	}
 	
-	
-	
-	
-	
-	
-	
-	private Connection getConnection() {
-		
-		Context context = null;
-		DataSource dataSource = null;
-		Connection connection = null;
-		try {
-			context = new InitialContext();
-			dataSource = (DataSource)context.lookup("java:comp/env/jdbc/Oracle11g");
-			connection = dataSource.getConnection();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		
-		return connection;
-	}
-	
-	
-	
+	//식당고유번호(businessNumber)에 해당하는 리뷰 개수를 가져옴
 	public int getReviewCount(String businessNumber) {
 		Connection connection = null;
 		PreparedStatement pstmt = null;
@@ -206,7 +178,7 @@ public class ReviewDao {
 		
 	}
 	
-	
+	//리뷰정보(dto)를 이용하여 리뷰를 수정함
 	public int updateReview(ReviewDto dto) {
 		int ri = 0;
 		
@@ -239,7 +211,7 @@ public class ReviewDao {
 		return ri;
 	}
 	
-	
+	//식당고유번호(businessNumber)와 userId를 이용하여 식당에 등록된 리뷰를 삭제
 	public int deleteReview(String businessNumber, String userId) {
 		// TODO Auto-generated method stub
 		Connection connection = null;
@@ -271,5 +243,20 @@ public class ReviewDao {
 		return rn;
 	}
 	
-	
+	//데이터베이스 연결(커넥션)
+	private Connection getConnection() {
+		
+		Context context = null;
+		DataSource dataSource = null;
+		Connection connection = null;
+		try {
+			context = new InitialContext();
+			dataSource = (DataSource)context.lookup("java:comp/env/jdbc/Oracle11g");
+			connection = dataSource.getConnection();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return connection;
+	}
 }

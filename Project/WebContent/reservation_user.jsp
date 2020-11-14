@@ -5,8 +5,6 @@
 <%@ page import="java.io.File" %>
 <%@ page import="java.util.ArrayList"%>
 <%request.setCharacterEncoding("UTF-8");%>    
-
-
  <%
    
 	String name = (String)session.getAttribute("name");
@@ -17,9 +15,6 @@
 	if(id==null)
 		id="-1";
 %>
-
-
-
 <!DOCTYPE html>
 <html>
 
@@ -62,8 +57,6 @@
   <div id="left-menu" class="panel panel-left panel-reveal">
       <div class="content-block">
          <div class="left-menu-profile text-center">
-         
-      
          </div>
         </div>
       <!-- Menu items -->
@@ -81,14 +74,10 @@
                   </div>
                </div>
             </li>
-         
-         
 <%      //루트계정일때는
       if(id.equals("root")){
          
 %>
-         
-         
             <li>
                <div class="item-content">
                   <div class="item-media">
@@ -101,7 +90,6 @@
                   </div>
                </div>
             </li>
-            
             
              <li>
                <div class="item-content">
@@ -119,14 +107,9 @@
 <%
       }
 %>
-         
-         
 <%
-      if(MemberDao.MEMBER_OWNER_IS_SUCCESS==dao.businessNumberCheck(id)){      //점주만
-         
-         
+      if(MemberDao.MEMBER_OWNER_IS_SUCCESS==dao.businessNumberCheck(id)){      //점주만   
 %>
- 
          <li>
                <div class="item-content">
                   <div class="item-media">
@@ -139,10 +122,7 @@
                   </div>
                </div>
             </li>
- 
- 
- 
- 
+
             <li>
                <div class="item-content">
                   <div class="item-media">
@@ -182,7 +162,6 @@
                </div>
             </li>
             
-            
             <li>
                <div class="item-content">
                   <div class="item-media">
@@ -212,7 +191,6 @@
       }
          
 %>
-            
             <li>
                <div class="item-content">
                   <div class="item-media">
@@ -225,7 +203,6 @@
                   </div>
                </div>
             </li>
-            
             
             <li>
                <div class="item-content">
@@ -252,8 +229,6 @@
                   </div>
                </div>
             </li>
-            
-         
             
             <%if(MemberDao.MEMBER_USER_IS_SUCCESS==dao.businessNumberCheck(id)){    %>
             
@@ -294,20 +269,9 @@
                      </div>
                   </div>
                </div>
-            </li>
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
+            </li> 
          </ul>
       </div>
-      <!-- Menu items -->
     </div>
 <div data-page="restaurants" class="page navbar-fixed toolbar-fixed">
 <div class="views"> 
@@ -329,9 +293,6 @@
                 </div>
             </div>
         </div>
-
-        <!--  -->
-
  <div class="tabs-animated-wrap">
   <div class="tabs">
   <div id="tab-1" class="page-content tab active">
@@ -339,20 +300,13 @@
       <div class="content-block">
       <div id="list-restaurants">
 						<%
-							
 							ReservationDao reservationDao=ReservationDao.getInstance();
 							ArrayList<ReservationDto> reservationDtos=reservationDao.lists();
-							
-						
-							
 							for(int i=0;i<reservationDtos.size();i++){
 								ReservationDto reservationDto=reservationDtos.get(i);
 								if(!reservationDto.getUserId().equals(id))
 									continue;
-								
 							%>						
-						
-						
 						<div class="list-block media-list margin-top-15">
 							<ul>						
 							
@@ -464,21 +418,14 @@
 							}		
 				
 				%>
-  
-        <!--  -->
-
-    
-
-               
                <div class="text-center margin-bottom-15">
 					<a href="index.jsp" class="button button-fill color-facebook text-thiny">메인 화면으로</a>
 				</div>
 				</div>
-				</div>
-				</div>
-				
-				</div>
-				</div>
+			</div>
+			</div>
+		</div>
+		</div>
     </div>
     </div>
     </div>

@@ -6,7 +6,6 @@
  <%request.setCharacterEncoding("UTF-8");%>
 
 <%
-
 String businessNumber=request.getParameter("businessNum"); 
 String userId=(String)session.getAttribute("id");
 ReviewDao dao=ReviewDao.getInstance();
@@ -40,7 +39,6 @@ String reText=dto.getReviewText();
 						  </div>
 					</li>
 				  	
-					
 					<li>
 					  <div class="item-content">
 						<div class="input-icon item-media"><i class="flaticon-user"></i></div>
@@ -65,21 +63,14 @@ String reText=dto.getReviewText();
 					  </div>
 					</li>
 
-				
 					</ul>
 				</div>
-
-
 				<div>
 				<input type="submit" class="button button-fill color-black text-thiny" value="입력">
 				</div>
-
-				
-
 			</form>
 		</div>
 	</div>
 </div>
-
 </body> 
 </html>

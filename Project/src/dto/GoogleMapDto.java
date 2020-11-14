@@ -1,5 +1,6 @@
 package dto;
 
+//구글 맵 api에 대한 정보 (api key 값을 담는것은 googledata)를 표현
 public class GoogleMapDto {
 	private String businessNumber;
 	private String googledata;
