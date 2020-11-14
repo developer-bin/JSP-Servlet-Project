@@ -25,6 +25,7 @@
 
 ## 동작 화면
   - 메인화면
+  
     ![image](https://user-images.githubusercontent.com/63801702/99140885-f1426480-2688-11eb-81b2-c03fbdecdcab.png)
 
   - 로그인
